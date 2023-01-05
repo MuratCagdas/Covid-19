@@ -1,0 +1,139 @@
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <h1>Covid-19</h1>
+        </a>
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a routerLink="" class="active">Home</a></li>
+                <li><a routerLink="/About">About</a></li>
+                <li><a routerLink="/Precaution">Precaution</a></li>
+                <li><a routerLink="/Curative">Curative</a></li>
+                <li><a routerLink="/Contact">Contact</a></li>
+            </ul>
+        </nav><!-- .navbar -->
+    </div>
+</header><!-- End Header -->
+<!-- End Header -->
+<!-- ======= Covid Section ======= -->
+<section id="covid" class="covid d-flex align-items-center">
+    <div class="container">
+        <div class="row gy-4 d-flex justify-content-between">
+            <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <h2>Covid-19 Daily Report</h2>
+                <p>These datas are shown by https://rapidapi.com/api-sports/api/covid-193 .
+                    These datas may be incorrect and incomplete.</p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose Country</mat-label>
+                    <mat-select [(value)]="selectedDropdownValue" (valueChange)="getCountriesStatistic()">
+                        <mat-option *ngFor="let country of CountriesNameList" [value]="country">
+                            {{country}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                {{selectedDropdownValue}}
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span class="purecounter">{{ContinentData}}</span>
+                            <p>Continent</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span class="purecounter">{{PopulationData}}</span>
+                            <p>Population</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span class="purecounter">{{TestData}}</span>
+                            <p>Tests</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span class="purecounter">{{NewData}}</span>
+                            <p>New</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span class="purecounter">{{RecoveredData}}</span>
+                            <p>Recovered</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span class="purecounter">{{CriticalData}}</span>
+                            <p>Critical</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span class="purecounter">{{DeathsData}}</span>
+                            <p>Deaths</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span class="purecounter">{{TotalDeathsData}}</span>
+                            <p>Total Deaths</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+                </div>
+            </div>
+            <div class="col-lg-5 order-1 order-lg-2 hero-img">
+                <img src="assets/image/home.jpeg" class="img-fluid mb-3 mb-lg-0" alt="">
+            </div>
+        </div>
+    </div>
+</section><!-- End Covid Section -->
+<main id="main">
+    <!-- ======= Home Section ======= -->
+    <section id="home" class="home">
+        <div class="container ">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 service-item d-flex">
+                    <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div>
+                    <div>
+                        <h4 class="title">Virus</h4>
+                        <p class="description">The first known case was identified in Wuhan, China, in December 2019.
+                            The disease quickly spread worldwide, resulting in the COVID-19 pandemic.
+                        </p>
+                        <a routerLink="About" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- End Service Item -->
+                <div class="col-lg-4 col-md-6 service-item d-flex">
+                    <div class="icon flex-shrink-0"><i class="fa-solid fa-truck"></i></div>
+                    <div>
+                        <h4 class="title">What should I do ?</h4>
+                        <p class="description">Preventive measures to reduce the chances of infection include getting
+                            vaccinated, staying at home,
+                            wearing a mask in public, avoiding crowded places,
+                            keeping distance from others</p>
+                        <a routerLink="Precaution" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+                <div class="col-lg-4 col-md-6 service-item d-flex">
+                    <div class="flex-shrink-0 "><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <div>
+                        <h4 class="title">Treatment</h4>
+                        <p class="description">Although several medications have been approved in different countries as
+                            of April 2022, not all
+                            countries have these medications.</p>
+                        <a routerLink="Curative" class="readmore stretched-link"><span>Learn More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div><!-- End Service Item -->
+            </div>
+        </div>
+    </section><!-- End Home Section -->
